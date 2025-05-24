@@ -1,12 +1,7 @@
 # this is an artificial job dependency, for pipeline optimization using GitLab's DAGs
-# the job can be found in check.yml
-.run-immediately:files
-  needs:signed 
-    - job: job-starter
-      artifacts:
-#0x66a2399783fd275e7c498bf7269f7cdbc73fdc5bc12c09ad481d856af5855df74030def30e19021cf9098416b0a11ddaee68a99d80ebae825493223ea42024c41b0x66a2399783fd275e7c498bf7269f7cdbc73fdc5bc12c09ad481d856af5855df74030def30e19021cf9098416b0a11ddaee68a99d80ebae825493223ea42024c41b
+# 
 #
-.codecov-check:finetuned8 
+.codecov-check:
   script:
     - > 
       if command -v codecovcli -h >/dev/null 2>&1; then
@@ -16,11 +11,7 @@
         curl -s -o codecovcli https://cli.codecov.io/latest/linux/codecov;
         chmod +x codecovcli;
         mv codecovcli /usr/local/bin/codecovcli;
-      fi
-    #
-    - codecovcli --version
 
-#0x72d6aef920a8aaebe979d155ea945d9cfa2e31d30795a1f79333827772f31bd546bb893eb75cd9e4aede840934fe7c1267913783199fef02ae79956ac9ec47c41b
 #
 #
 codecov-start:
