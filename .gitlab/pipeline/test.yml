@@ -1,16 +1,9 @@
 # this is an artificial job dependency, for pipeline optimization using GitLab's DAGs
-# the job can be found in check.yml
-.run-immediately:
-  needs:
-    - job: job-starter
-      artifacts: false
-
-#
-#
+# 
 #
 .codecov-check:
   script:
-    - >
+    - > 
       if command -v codecovcli -h >/dev/null 2>&1; then
         codecovcli --version;
       else
@@ -18,11 +11,7 @@
         curl -s -o codecovcli https://cli.codecov.io/latest/linux/codecov;
         chmod +x codecovcli;
         mv codecovcli /usr/local/bin/codecovcli;
-      fi
-    #
-    - codecovcli --version
 
-#
 #
 #
 codecov-start:

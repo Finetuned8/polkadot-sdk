@@ -46,7 +46,7 @@
       artifacts: true
     - job: build-push-image-polkadot-debug
       artifacts: true
-    - job: build-push-image-colander
+    - job:run build-push-image-colander
       artifacts: true
     - job: build-push-image-polkadot-parachain-debug
       artifacts: true
